@@ -1,0 +1,625 @@
+* {
+	margin:0;
+	padding:0;
+	font-family: 'Montserrat', sans-serif;
+	box-sizing: border-box;
+}
+body{
+	scroll-behavior: smooth;
+    background-color: black;
+}
+
+/*
+	Navbar Styling
+*/
+
+.navbar {
+    height: 60px !important;
+}
+.nav-dropdown-heading{
+	color: #ffffff;
+	max-width: 240px;
+}
+.nav-link {
+	background: none;
+	border: none;
+	text-decoration: none;
+	color: #ffffff;
+	font-family: inherit;
+	font-size: 18px;
+	font-weight: bold;
+	cursor: pointer;
+	padding: 0;
+}
+.nav-dropdown {
+	position: relative;
+} 
+.nav-dropdown-menu {
+	position: absolute;
+	max-height: 300px; 
+    overflow-y: auto;
+	left: 50%; 
+    transform: translateX(-50%); 
+	background-color: rgb(0, 0, 0, 0.6);
+	padding: .75rem;
+	border-radius: .25rem;
+	box-shadow: 0 2px 5px 0 rgba(255, 255, 255, 0.2);
+	opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms ease-in-out, transform 150ms ease-out;
+}
+.nav-dropdown:hover > .nav-link + .nav-dropdown-menu {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    pointer-events: auto;
+}
+.nav-information-grid {
+	display: grid;
+	grid-template-columns: repeat(2, max-content);
+	gap: 2rem;
+}
+.nav-dropdown-links {
+	display: flex;
+	flex-direction: column;
+	gap: .25rem;
+}
+.navbar-light .navbar-brand {
+	font-size: 25px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-decoration: none;
+	background: linear-gradient(90deg, #2a2a2c, #848789,#d4dada,#2a2a2c,#848789);
+	background-size: 400%;
+	background-clip: text;
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animatedBrand 8s ease-in-out infinite;
+}
+@keyframes animatedBrand {
+	0%
+	{
+		background-position: 0%;
+	}
+	100%{
+		background-position: 100%;
+	}
+	
+}
+.navbar-light .navbar-nav .nav-link {
+	color: #fff;
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+	color: #fff;
+}
+.w-100 {
+	height: 100vh;
+}
+.w-10 {
+	height: auto;
+	width: 100%;
+}
+.navbar-toggler {
+	padding: 1px 5px;
+	font-size: 18px;
+	line-height: 0.3;
+	background: linear-gradient(90deg, #0000FF, #7EC8E3, #d4f1fd, #7EC8E3, #0000FF);
+}
+.bg-light {
+	background-color: black !important;
+}
+
+/*
+	Carousel styling
+*/
+
+.carousel-item {
+	height: 100vh;
+}
+.carousel-item img{
+	opacity: 0.4;
+}
+.carousel-caption {
+	bottom: 220px;
+}
+.carousel-caption h5 {
+	font-size: 45px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-top: 25px;
+}
+.carousel-caption p {
+	width: 60%;
+	margin: auto;
+	font-size: 18px;
+	line-height: 1.9;
+}
+.carousel-caption a {
+	
+	position: relative;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 10px 30px;
+	display: inline-block;
+	color: #000;
+	margin-top: 15px;
+	border-radius: 60px;
+	box-shadow: inset 0 0 30px rgba(212, 241, 244, 1);
+	overflow: hidden;
+}
+.carousel-caption a:before {
+	
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -10px;
+	width: 70%;
+	height: 100%;
+	background: rgba(255,255,255,.3);
+	transition: .5s;
+	transform: skewX(-15deg);
+}
+.carousel-caption a:hover:before {
+	
+	left: 210px;
+}
+.carousel-caption a:after {
+	
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -70px;
+	width: 50px;
+	height: 100%;
+	background: rgba(255,255,255,.5);
+	transition: .8s;
+	transform: skewX(-15deg);
+	transition-delay: .3s;
+}
+.carousel-caption a:hover:after {
+	
+	left: 210px;
+}
+
+/*
+	Content styling
+*/
+
+.content-h1 {
+	font-size: 70px;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.content-h2 {
+    text-align: center;
+}
+
+.content-container {
+    padding: 0.2em;
+    justify-content: center;
+    margin: 5em;
+}
+
+.content {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr minmax(50px,2fr);
+    grid-column-gap: 1em;
+    border-radius: 1em;
+    padding: 1em;
+    max-width: 1000px;
+    min-width: 100px;
+    justify-content: center;
+}
+
+.paragraph {
+    text-align: left;
+    color: white;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.paragraph2 {
+    text-align: left;
+    color: white;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.content-img {
+    margin: auto;
+    border-radius: 1em;
+	text-align: center;
+}
+
+.content-caption {
+	color: #000;
+	position: relative;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	margin-left: 80%;
+	padding: 10px 30px;
+	display: inline-block;
+	margin-top: 15px;
+	border-radius: 60px;
+	box-shadow: inset 0 0 30px rgba(212, 241, 244, 1);
+	overflow: hidden;
+}
+.content-caption:before {
+
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -10px;
+	width: 70%;
+	height: 100%;
+	background: rgba(255,255,255,.3);
+	transition: .5s;
+	transform: skewX(-15deg);
+}
+.content-caption:hover:before {
+	
+	left: 210px;
+}
+.content-caption:after {
+
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -70px;
+	width: 50px;
+	height: 100%;
+	background: rgba(255,255,255,.5);
+	transition: .8s;
+	transform: skewX(-15deg);
+	transition-delay: .3s;
+}
+.content-caption:hover:after {
+	
+	left: 210px;
+}
+
+.top {
+
+	font-weight: bold;
+	--offset: 50px; 
+	
+	position: sticky;
+	bottom: 20px;  
+	margin-left: 10px;    
+	place-self: end;
+	margin-top: calc(100vh + var(--offset));
+	
+	/* visual styling */
+	text-decoration: none;
+	padding: 10px;
+	font-family: sans-serif;
+	color: #ffffff;
+	border-radius: 100px;
+	white-space: nowrap;
+  }
+
+  .top:hover {
+    color:#ffffff; 
+    text-decoration:none; 
+    cursor:pointer;  
+}
+
+/*
+	DataViz styling
+*/
+
+.DataViz .navbar-light .navbar-brand {
+	
+	font-size: 25px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-decoration: none;
+	background: linear-gradient(90deg, #0000FF, #7EC8E3,#d4f1f4,#0000FF,#7EC8E3);
+	background-size: 400%;
+	background-clip: text;
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animatedBrand 8s ease-in-out infinite;
+}
+@keyframes animatedBrand {
+	0%
+	{
+		background-position: 0%;
+	}
+	100%{
+		background-position: 100%;
+	}
+	
+}
+
+.DataViz{
+	color: white;
+	background: linear-gradient(to right, #7EC8E3 0%, #7EC8E3 50%, #bcd8e4 50%, #bcd8e4 100%);
+}
+
+.DataViz .paragraph mark{
+	background-color: #7EC8E3;
+	color: white;
+}
+
+/*
+	InfoQual styling
+*/
+
+.InfoQual .navbar-light .navbar-brand {
+	font-size: 25px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-decoration: none;
+	background: linear-gradient(90deg, #002420, #04443d,#23b9a7 ,#002420,#04443d);
+	background-size: 400%;
+	background-clip: text;
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animatedBrand 8s ease-in-out infinite;
+}
+@keyframes animatedBrand {
+	0%
+	{
+		background-position: 0%;
+	}
+	100%{
+		background-position: 100%;
+	}
+	
+}
+
+.InfoQual{
+	color: white;
+	background: linear-gradient(to left, #002420 0%, #002420, 50%, #23b9a7 50%, #23b9a7 100%);
+}
+
+.InfoQual .paragraph mark{
+	background-color: #23b9a7;
+	color: white;
+}
+
+.InfoQual .paragraph2 mark{
+	background-color: #002420;
+	color: white;
+}
+
+/*
+	DataEth styling
+*/
+
+.DataEth .navbar-light .navbar-brand {
+	font-size: 25px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-decoration: none;
+	background: linear-gradient(90deg, #657c0c, #9dc013,#c9eb43 ,#657c0c,#9dc013);
+	background-size: 400%;
+	background-clip: text;
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animatedBrand 8s ease-in-out infinite;
+}
+@keyframes animatedBrand {
+	0%
+	{
+		background-position: 0%;
+	}
+	100%{
+		background-position: 100%;
+	}
+	
+}
+
+.DataEth{
+	color: white;
+	background: linear-gradient(to right, #324B61 0%, #324B61, 50%, #9dc013 50%, #9dc013 100%);
+}
+
+.DataEth .paragraph mark{
+	background-color: #324B61;
+	color: white;
+}
+
+.DataEth .paragraph2 mark{
+	background-color: #9dc013;
+	color: white;
+}
+
+/*
+	AiandInfoSysInBusiness styling
+*/
+
+.AiandInfoSysInBusiness .navbar-light .navbar-brand {
+	font-size: 25px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-decoration: none;
+	background: linear-gradient(90deg, #494bab, #7576d2,#adaded ,#494bab,#7576d2);
+	background-size: 400%;
+	background-clip: text;
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animatedBrand 8s ease-in-out infinite;
+}
+@keyframes animatedBrand {
+	0%
+	{
+		background-position: 0%;
+	}
+	100%{
+		background-position: 100%;
+	}
+	
+}
+
+.AiandInfoSysInBusiness{
+	color: white;
+	background: linear-gradient(to left, #7576d2 0%, #7576d2, 50%, #adaded 50%, #adaded 100%);
+}
+
+.AiandInfoSysInBusiness .paragraph mark{
+	background-color: #adaded;
+	color: white;
+}
+
+.AiandInfoSysInBusiness .paragraph2 mark{
+	background-color: #7576d2;
+	color: white;
+}
+
+/*
+	InfoSysIntegration styling
+*/
+
+.InfoSysIntegration .navbar-light .navbar-brand {
+	font-size: 25px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-decoration: none;
+	background: linear-gradient(90deg, #772e25, #c44536,#e85646 ,#772e25,#c44536);
+	background-size: 400%;
+	background-clip: text;
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animatedBrand 8s ease-in-out infinite;
+}
+@keyframes animatedBrand {
+	0%
+	{
+		background-position: 0%;
+	}
+	100%{
+		background-position: 100%;
+	}
+	
+}
+
+.InfoSysIntegration{
+	color: white;
+	background: linear-gradient(to right, #772e25 0%, #772e25 50%, #c44536 50%, #c44536 100%);
+}
+
+.InfoSysIntegration .paragraph mark{
+	background-color: #772e25;
+	color: white;
+}
+.InfoSysIntegration .paragraph2 mark{
+	background-color: #c44536;
+	color: white;
+}
+
+/*
+	CustomizingInfoSys styling
+*/
+
+.CustomizingInfoSys .navbar-light .navbar-brand {
+	font-size: 25px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-decoration: none;
+	background: linear-gradient(90deg, #de7e30, #f0a261,#e9c56d ,#de7e30,#f0a261);
+	background-size: 400%;
+	background-clip: text;
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animatedBrand 8s ease-in-out infinite;
+}
+@keyframes animatedBrand {
+	0%
+	{
+		background-position: 0%;
+	}
+	100%{
+		background-position: 100%;
+	}
+	
+}
+
+.CustomizingInfoSys{
+	color: white;
+	background: linear-gradient(to left, #f0a261 0%, #f0a261 50%, #e9c56d 50%, #e9c56d 100%);
+}
+
+.CustomizingInfoSys .paragraph mark{
+	background-color: #f0a261;
+	color: white;
+}
+
+/*
+	Quiz Styling
+*/
+
+.app{
+	background-color: white;
+	width: 90%;
+	max-width: 600px;
+	margin: 100px auto 0;
+	border-radius: 10px;
+	padding: 30px;
+}
+
+.app h1{
+	font-size: 25px;
+	color: #48a7c9;
+	font-weight: 600;
+	border-bottom: 1px solid #333;
+	padding-bottom: 30px;
+}
+
+.quiz{
+	padding: 20px 0;
+}
+
+.quiz h2{
+	font-size: 18px;
+	color: #48a7c9;
+	font-weight: 600;
+}
+
+.btn{
+	background: white;
+	color: #222;
+	font-weight: 500;
+	width: 100%;
+	border: 1px solid #222;
+	padding: 10px;
+	margin: 10px 0;
+	text-align: left;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.btn:hover:not([disabled]){
+	background: #222;
+	color: white;
+}
+
+.btn:disabled{
+	cursor: no-drop;
+}
+
+#next-btn{
+	background: #011e4d;
+	color: white;
+	font-weight: 500;
+	width: 150px;
+	border: 0;
+	padding: 10px;
+	margin: 20px auto 0;
+	border-radius: 4px;
+	cursor: pointer;
+	display: none;
+}
+
+.correct{
+	background: #9aeabc;
+}
+
+.incorrect{
+	background: #ff9393;
+}
